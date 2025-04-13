@@ -13,4 +13,5 @@ Route::get('/role', [auth_controller::class, 'getSelectRole'])->name('select_rol
 Route::get('/article/create', [article_controller::class, 'getCreate']);
 Route::post('/article/create/post', [article_controller::class, 'postCreate']);
 
-Route::post('register/farmer/post', [auth_controller::class, 'postRegisterFarmer']);
+Route::post('/register/farmer/post', [auth_controller::class, 'postRegisterFarmer']);
+Route::post('/register/expert/post', [auth_controller::class, 'postRegisterExpert']);

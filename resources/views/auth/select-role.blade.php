@@ -24,7 +24,9 @@
 
         <div class="card selected">
           <div class="icon-box">
-            <img src="{{ asset('image/user.png') }}" alt="">
+            <a href="/register/farmer">
+              <img src="{{ asset('image/user.png') }}" alt="">
+            </a>
           </div>
           <div class="card-content">
             <h4>Farm or plant enthusiasts</h4>
@@ -35,7 +37,9 @@
 
         <div class="card">
           <div class="icon-box">
-            <img src="{{ asset('image/farm.png') }}" alt="">
+            <a href="/register/expert">
+              <img src="{{ asset('image/farm.png') }}" alt="">
+            </a>
           </div>
           <div class="card-content">
             <h4>Agricultural expert</h4>

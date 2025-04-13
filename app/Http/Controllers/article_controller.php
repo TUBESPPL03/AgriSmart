@@ -24,7 +24,7 @@ class article_controller extends Controller
         $data = [
             'title' => $request->input('title'),
             'article' => $request->input('article'),
-            'id_user' => "1",
+            'id_user' => "5",
             'image' => $imagePath,
             'created_at' => now(),
             'updated_at' => now(),

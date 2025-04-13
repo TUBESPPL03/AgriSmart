@@ -18,17 +18,18 @@
     </div>
 
     <div class="right">
-      <form class="form">
+      <form class="form" action="/register/expert/post" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="input-box mb-3">
-          <input type="text" placeholder="Enter username" class="input-field" required>
+          <input type="text" name="name" placeholder="Enter username" class="input-field" required>
         </div>
 
         <div class="input-box mb-3">
-          <input type="email" placeholder="Enter email address" class="input-field" required>
+          <input name="email" type="email" placeholder="Enter email address" class="input-field" required>
         </div>
 
         <div class="input-box mb-3">
-          <input type="password" placeholder="Enter password" id="password" class="input-field" required>
+          <input type="password" name="password" placeholder="Enter password" id="password" class="input-field" required>
           <span id="togglePassword" class="toggle-password">SHOW</span>
         </div>
 
@@ -41,7 +42,7 @@
             Browse
           </button>
 
-          <input type="file" id="real-file" style="display: none;" 
+          <input name="image" type="file" id="real-file" style="display: none;" 
                  onchange="document.getElementById('file-path').value = this.files[0]?.name">
         </div>
 
