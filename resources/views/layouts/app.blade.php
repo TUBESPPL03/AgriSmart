@@ -1,69 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'AgriSmart')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <title>AgriSmart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url('/images/Pertanian-Indonesia.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #e8f5e9; /* lebih soft hijau */
         }
 
-        .overlay-card {
-            background-color: rgba(255, 255, 255, 0.6); /* transparan */
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .navbar {
+            background: linear-gradient(to right, #388e3c, #66bb6a);
+            padding: 15px 30px;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
         .container {
-            flex: 1;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        footer {
-            background-color: #007332;
+        .btn-green {
+            background-color: #43a047;
             color: white;
-            text-align: center;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background-color: #2e7d32;
+        }
+
+        .btn-grey {
+            background-color: #9e9e9e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
             padding: 10px;
+            border: 1px solid #bdbdbd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #007332;">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">AgriSmart</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('plant_growth.index') }}">Monitoring</a>
-                    </li>
-                    {{-- Tambahkan menu lainnya jika ada --}}
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container my-4">
-        @yield('content')
+    <div class="navbar">
+        AgriSmart
     </div>
 
-    <footer>
-        <div class="container">
-            <small>&copy; {{ date('Y') }} AgriSmart. All rights reserved.</small>
-        </div>
-    </footer>
+    <div class="container">
+        @yield('content')
+    </div>
 </body>
 </html>

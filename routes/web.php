@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MonitoringController;
 use App\Http\Controllers\OptimasiPertanianController;
 use App\Http\Controllers\RencanaPanenController;
+use App\Http\Controllers\ExpertiseController;
 
 Route::get('/login', [auth_controller::class, 'getLogin'])->name('login');
 Route::get('/register/farmer', [auth_controller::class, 'getRegister']);
@@ -43,3 +44,10 @@ Route::delete('/plant-growth/{id}', [PlantGrowthController::class, 'destroy'])->
 
 // Misalnya ini adalah rute untuk halaman rencana panen
 Route::get('/rencana-panen', [RencanaPanenController::class, 'index'])->name('rencana.panen');
+
+
+Route::get('/', [ExpertiseController::class, 'index']); // Redirect beranda ke index
+
+Route::resource('expertises', ExpertiseController::class);
+
+
