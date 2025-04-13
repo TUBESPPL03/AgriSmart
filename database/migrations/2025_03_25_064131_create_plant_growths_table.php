@@ -1,33 +1,24 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Models;
 
-return new class extends Migration
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class PlantGrowth extends Model
 {
-    /**
-     * Run the migrations.
-     */
-    public function up()
-    {
-        Schema::create('plant_growth', function (Blueprint $table) {
-            $table->id();
-            $table->string('plant_type');
-            $table->text('activity_history');
-            $table->string('photo');
-            $table->date('harvest_time'); // Kolom waktu panen
-            $table->timestamps();
-        });
-    }
-    
-    
+    use HasFactory;
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('plant_growths');
-    }
-};
+    // Menentukan kolom-kolom yang dapat diisi secara massal
+    protected $fillable = [
+        'plant_type',
+        'activity_history',
+        'photo',
+        'harvest_time',
+        'predicted_harvest',
+    ];
+
+    // Menentukan kolom tanggal yang harus diperlakukan sebagai instance Carbon
+    protected $dates = ['harvest_time', 'predicted_harvest'];
+}
+

@@ -7,6 +7,7 @@ use App\Models\PlantGrowth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
+
 class PlantGrowthController extends Controller
 {
     // Menampilkan daftar data pertumbuhan tanaman

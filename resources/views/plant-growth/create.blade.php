@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header text-white" style="background-color: #007332;">
             <h3 class="mb-0">Tambah Data Pertumbuhan Tanaman</h3>
         </div>
         <div class="card-body">

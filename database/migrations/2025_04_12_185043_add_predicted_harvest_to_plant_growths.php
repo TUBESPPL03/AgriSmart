@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('plant_growths', function (Blueprint $table) {
-            $table->date('harvest_time')->nullable()->after('photo');
+            // Menambahkan nilai default untuk kolom predicted_harvest
+            $table->date('predicted_harvest')->default(now())->change();
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('plant_growths', function (Blueprint $table) {
-            $table->dropColumn('harvest_time');
+            // Mengembalikan kolom predicted_harvest ke nullable tanpa default value
+            $table->date('predicted_harvest')->nullable()->change();
         });
     }
 };
